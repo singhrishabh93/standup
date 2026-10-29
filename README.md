@@ -1,6 +1,6 @@
 # standup
 
-your daily standup, written from your git commits.
+your daily standup, written from your git commits. https://standup-cli.vercel.app
 
 ```sh
 npx standup-ai ~/code

@@ -28,7 +28,7 @@
   ],
   "author": "Rishabh Singh (https://www.rishabhsingh.tech)",
   "license": "MIT",
-  "homepage": "https://github.com/singhrishabh93/standup#readme",
+  "homepage": "https://standup-cli.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/singhrishabh93/standup.git"
