@@ -1,0 +1,36 @@
+{
+  "name": "standup-ai",
+  "version": "0.1.0",
+  "description": "Your daily standup, written from your git commits. A CLI and an MCP server for Claude and Cursor.",
+  "type": "module",
+  "bin": {
+    "standup": "bin/standup.js",
+    "standup-ai": "bin/standup.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=18.3"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "standup",
+    "git",
+    "cli",
+    "mcp",
+    "claude",
+    "gemini",
+    "productivity"
+  ],
+  "author": "Rishabh Singh (https://www.rishabhsingh.tech)",
+  "license": "MIT",
+  "homepage": "https://github.com/singhrishabh93/standup#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhrishabh93/standup.git"
+  }
+}
