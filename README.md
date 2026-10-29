@@ -43,7 +43,7 @@ standup [folders...] [options]
     --json           raw data and the standup as JSON
     --raw            skip AI, list the commits as they are
 -c, --copy           copy the result to the clipboard
-    --model <name>   Gemini model (default gemini-2.5-flash)
+    --model <name>   Gemini model (default gemini-3.8-flash)
 ```
 
 Folders default to `$STANDUP_DIRS` (separated by `:`) or the current folder. Get a Gemini key at https://aistudio.google.com/apikey.

@@ -1,7 +1,7 @@
 // Builds the standup: done / next / blockers. With a Gemini key the commits
 // are rewritten into plain language; without one they're listed as they are.
 
-export const DEFAULT_MODEL = "gemini-2.5-flash";
+export const DEFAULT_MODEL = "gemini-3.8-flash";
 const MAX_COMMITS = 400;
 
 const SYSTEM = `You write a software developer's standup update from their git activity.
@@ -70,7 +70,12 @@ export async function aiStandup(repos, { label, key, model = DEFAULT_MODEL }) {
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: SYSTEM }] },
       contents: [{ role: "user", parts: [{ text: describeActivity(repos, label) }] }],
-      generationConfig: { temperature: 0.2, responseMimeType: "application/json", responseSchema: SCHEMA },
+      generationConfig: {
+        temperature: 0.2,
+        responseMimeType: "application/json",
+        responseSchema: SCHEMA,
+        thinkingConfig: { thinkingLevel: "low" },
+      },
     }),
   });
   if (!res.ok) {
@@ -84,7 +89,8 @@ export async function aiStandup(repos, { label, key, model = DEFAULT_MODEL }) {
     throw new Error(`Gemini returned HTTP ${res.status}: ${detail}`);
   }
   const data = await res.json();
-  const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("") ?? "";
+  const parts = data.candidates?.[0]?.content?.parts ?? [];
+  const text = parts.filter((p) => !p.thought).map((p) => p.text ?? "").join("");
   const parsed = JSON.parse(text);
   return {
     done: parsed.done ?? [],

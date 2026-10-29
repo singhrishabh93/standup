@@ -20,7 +20,7 @@ export const RUNS = [
       ["h", "blockers"],
       ["", "  • none"],
       ["", ""],
-      ["dim", "2 of 14 repos · 11 commits · gemini-2.5-flash"],
+      ["dim", "2 of 14 repos · 11 commits · gemini-3.8-flash"],
     ],
   },
   {
@@ -45,7 +45,7 @@ export const RUNS = [
       ["h", "blockers"],
       ["", "  • Waiting on Razorpay live keys for the payments release"],
       ["", ""],
-      ["dim", "3 of 14 repos · 38 commits · gemini-2.5-flash"],
+      ["dim", "3 of 14 repos · 38 commits · gemini-3.8-flash"],
     ],
   },
   {

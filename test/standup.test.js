@@ -48,7 +48,7 @@ test("raw standup lists commits and fresh uncommitted work", () => {
 test("ai standup reads gemini's json reply", async (t) => {
   const reply = { done: [{ repo: "app", text: "Shipped login" }], next: [], blockers: [] };
   t.mock.method(globalThis, "fetch", async (url, init) => {
-    assert.match(url, /gemini-2\.5-flash:generateContent$/);
+    assert.match(url, /gemini-3\.8-flash:generateContent$/);
     assert.equal(init.headers["x-goog-api-key"], "test-key");
     return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(reply) }] } }] }));
   });

@@ -1,6 +1,6 @@
 {
   "name": "standup-ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Your daily standup, written from your git commits. A CLI and an MCP server for Claude and Cursor.",
   "type": "module",
   "bin": {
